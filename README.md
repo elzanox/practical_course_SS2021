@@ -1,4 +1,4 @@
-# practical_course_SS2021
+# practical course SS2021
 
 Practical course: modeling, simulation, optimization
 
