@@ -18,19 +18,30 @@ For each of the three part there is a bonus exercise. The bonus questions are si
 exercises and they do not always come with a starting point for the matlab code. 
 
 ## Part I: Finite Differences (bonus question)
-o	Lecture 1: Finite differences for the 1-D Poisson equation (lectures slides, exercise, matlab files)
-o	Lecture 2: Finite differences for the 2-D Poisson equation (lectures slides, exercise, matlab files)
-o	Lecture 3: Time-discretization (lectures slides, exercise, matlab files)
-o	Lecture 4: Von Neumann stability analysis and advection-Diffusion equations (lectures slides, exercise, matlab files)
+o	Lecture 1: Finite differences for the 1-D Poisson equation
+
+o	Lecture 2: Finite differences for the 2-D Poisson equation
+
+o	Lecture 3: Time-discretization
+
+o	Lecture 4: Von Neumann stability analysis and advection-Diffusion equations
+
 ## Part II: Finite Elements (bonus question)
-o	Lecture 5: Finite elements in 1-D (lectures slides, exercise, matlab files)
-o	Lecture 6: Finite elements in 2-D (lectures slides, exercise, matlab files)
-o	Lecture 7: 2-D elasticity (lectures slides, exercise, matlab files)
-o	Lecture 8: Beam models (lectures slides, exercise, matlab files)
+o	Lecture 5: Finite elements in 1-D
+
+o	Lecture 6: Finite elements in 2-D
+
+o	Lecture 7: 2-D elasticity
+
+o	Lecture 8: Beam models
+
 ## Part III: Optimization (bonus question, matlab files)
-o	Lecture 9: Optimization and gradient descent (lectures slides, exercise, matlab files)
-o	Lecture 10: Hessians and step size selection (lectures slides, exercise, matlab files)
-o	Lecture 11: Dynamic optimal control (lectures slides, exercise, matlab files)
-o	Lecture 12: Control of neural ODEs (lectures slides, exercise, matlab files)
+o	Lecture 9: Optimization and gradient descent
+
+o	Lecture 10: Hessians and step size selection
+
+o	Lecture 11: Dynamic optimal control
+
+o	Lecture 12: Control of neural ODEs
 
 For questions, suggestions, or for the solutions to the matlab exercises, please contact me (daniel.veldman@math.fau.de). 
