@@ -11,7 +11,7 @@ The 12 lectures are structured into three parts of 4 lectures each.
 The different parts can be studied largely independent, but sometimes rely on previously covered topics. 
 In particular the material on time discretization from lecture 3 in part 1 also plays an important role in the other parts.
 
-For each week, you can find the lecture slides (pdf), a related matlab exercise (pdf), and a starting point for the matlab code (.m). 
+For each week, you can find the lecture slides (.pdf), a related matlab exercise (.pdf), and a starting point for the matlab code (.m). 
 For each of the three part there is a bonus exercise. The bonus questions are significantly more advanced than the other 
 exercises and they do not always come with a starting point for the matlab code. 
 
