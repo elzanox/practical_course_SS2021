@@ -15,7 +15,7 @@ For each week, you can find the lecture slides (.pdf), a related matlab exercise
 For each of the three part there is a bonus exercise. The bonus questions are significantly more advanced than the other 
 exercises and they do not always come with a starting point for the matlab code. 
 
-## Part I: Finite Differences ([bonus question](05_Part1_bonus))
+## Part I: Finite Differences ([bonus question](05_part1_bonus))
 o	[Lecture 1: Finite differences for the 1-D Poisson equation](01_week1)
 
 o	[Lecture 2: Finite differences for the 2-D Poisson equation](02_week2)
@@ -24,22 +24,22 @@ o	[Lecture 3: Time-discretization](03_week3)
 
 o	[Lecture 4: Von Neumann stability analysis and advection-Diffusion equations](04_week4)
 
-## Part II: Finite Elements (bonus question)
-o	Lecture 5: Finite elements in 1-D
+## Part II: Finite Elements ([bonus question](10_part2_bonus))
+o	[Lecture 5: Finite elements in 1-D](06_week5)
 
-o	Lecture 6: Finite elements in 2-D
+o	[Lecture 6: Finite elements in 2-D](07_week6)
 
-o	Lecture 7: 2-D elasticity
+o	[Lecture 7: 2-D elasticity](08_week7)
 
-o	Lecture 8: Beam models
+o	[Lecture 8: Beam models](09_week8)
 
-## Part III: Optimization (bonus question, matlab files)
-o	Lecture 9: Optimization and gradient descent
+## Part III: Optimization ([bonus question](15_part3_bonus))
+o	[Lecture 9: Optimization and gradient descent](11_week9)
 
-o	Lecture 10: Hessians and step size selection
+o	[Lecture 10: Hessians and step size selection](12_week10)
 
-o	Lecture 11: Dynamic optimal control
+o	[Lecture 11: Dynamic optimal control](13_week11)
 
-o	Lecture 12: Control of neural ODEs
+o	[Lecture 12: Control of neural ODEs](14_week12)
 
 For questions, suggestions, or for the solutions to the matlab exercises, please contact me (daniel.veldman@math.fau.de). 
