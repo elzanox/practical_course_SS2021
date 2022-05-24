@@ -12,7 +12,7 @@ The different parts can be studied largely independent, but sometimes rely on pr
 In particular the material on time discretization from lecture 3 in part 1 also plays an important role in the other parts.
 
 For each week, you can find the lecture slides (.pdf), a related matlab exercise (.pdf), and a starting point for the matlab code (.m). 
-For each of the three part there is a bonus exercise. The bonus questions are significantly more advanced than the other 
+For each of the three parts there is a bonus exercise. The bonus questions are significantly more advanced than the other 
 exercises and they do not always come with a starting point for the matlab code. 
 
 ## Part I: Finite Differences ([bonus question](05_part1_bonus))
