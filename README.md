@@ -1,10 +1,10 @@
 # Practical course: modeling, simulation, optimization SS2021
 
-This page contains the material for a practical course on modeling, simulation, and optimization that I prepared for 
+This page contains the material for a practical course on modeling, simulation, and optimization that was thaught in
 the summer semester 2021 at the Friedrich-Alexander Universität Erlangen-Nuremberg. This course provides a 
 practical introduction to some of the most commonly used discretization methods for PDEs (finite differences and 
 finite elements) and their implementation in matlab. It also covers some of the basics of gradient-based optimization 
-focused on the numerical solution of (PDE-constrained) optimal control problems. Some basic programming skills in matlab 
+focused on (PDE-constrained) optimal control problems. Some basic programming skills in matlab 
 or a similar programming language is recommended but not required. 
 
 The 12 lectures are structured into three parts of 4 lectures each. 
