@@ -16,7 +16,7 @@ For each of the three part there is a bonus exercise. The bonus questions are si
 exercises and they do not always come with a starting point for the matlab code. 
 
 ## Part I: Finite Differences (bonus question)
-o	Lecture 1: Finite differences for the 1-D Poisson equation
+o	[Lecture 1: Finite differences for the 1-D Poisson equation](01_week1)
 
 o	Lecture 2: Finite differences for the 2-D Poisson equation
 
