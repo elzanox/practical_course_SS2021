@@ -1,7 +1,7 @@
 # Practical course: modeling, simulation, optimization SS2021
 
 This page contains the material for a practical course on modeling, simulation, and optimization that was thaught in
-the summer semester 2021 at the Friedrich-Alexander Universität Erlangen-Nuremberg. This course provides a 
+the summer semester 2021 at the Friedrich-Alexander Universität Erlangen-Nürnberg. This course provides a 
 practical introduction to some of the most commonly used discretization methods for PDEs (finite differences and 
 finite elements) and their implementation in matlab. It also covers some of the basics of gradient-based optimization 
 focused on (PDE-constrained) optimal control problems. Some basic programming skills in matlab 
@@ -22,7 +22,7 @@ o	[Lecture 2: Finite differences for the 2-D Poisson equation](02_week2)
 
 o	[Lecture 3: Time-discretization](03_week3)
 
-o	[Lecture 4: Von Neumann stability analysis and advection-Diffusion equations](04_week4)
+o	[Lecture 4: Von Neumann stability analysis and advection-diffusion equations](04_week4)
 
 ## Part II: Finite Elements ([bonus question](10_part2_bonus))
 o	[Lecture 5: Finite elements in 1-D](06_week5)
