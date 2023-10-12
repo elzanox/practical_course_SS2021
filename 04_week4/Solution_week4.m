@@ -194,6 +194,13 @@ for kk = 2:NT
     rho(:,kk) = rhokk;
 end
 
+% for kk = 1:NT
+%     rhokk = rho(:,kk);
+%     I = speye(nn,nn);
+%     % TODO: Implement a time discretization of scheme of your choice.
+%     rho(:,kk+1) = I*rho(:,kk) + dt*(kappa*A*rho(:,kk) + vx*rho(:,kk));
+% end
+
 
 %% plot the obtained solution
 
