@@ -1,6 +1,17 @@
 clear all
 close all
 clc
+%% Define a foldername and filenames
+folder_name = 'hasil'
+frame_filename ='frame_%04d.png';
+counter = 0;
+done = 0;
+
+software = 0;       % kalau kamu pake matlab set menjadi 1
+                    % kalau kamu pake octave set menjadi 0
+
+create_movie = 0;   % kalau kamu meyimpan video set menjadi 1 . kalau tidak set menjadi 0
+
 
 load('Week4_velocity_field')   % load the given velocity field. 
 % The provided file contains the grid vectors x and y and 
@@ -25,6 +36,7 @@ ylabel(cbar, 'magnitude of the velocity [m/s]')
 axis equal
 axis tight
 view(2)
+print(fullfile(folder_name, 'velocity_field'), '-dpng', '-S800,600');
 
 figure(2)
 %% define other parameters
@@ -42,7 +54,7 @@ y0 = 0.7*Ly;         % [m] y-coordinate of the center of the initial concentrati
 a = 0.03*Ly;         % [m] width parameter for the initial concentration
 Tsim = 8*60;         % [s] length of the simulation (=8 min)
 
-NT = 10;            % number of time steps
+NT = 100;            % number of time steps
 time = linspace(0,Tsim,NT);
 dt = time(2) - time(1);
 
@@ -175,8 +187,8 @@ rho = zeros(nn, NT); % Solution matrix for the density of chlorine.
                      % The columns of this matrix contain the solutions at different time instances
 rho(:,1) = rho0;     % The first column is thus equal to the initial condition
 I = speye(nn,nn);
-% TODO: Implement a time discretization of scheme of your choice.
 
+% TODO: Implement a time discretization of scheme of your choice.
 %%FORWARD-EULER
 % for kk = 1:NT
 %     rho(:, kk + 1) = rho(:, kk) + dt * A * rho(:, kk);
@@ -195,7 +207,7 @@ end
 % end
 
 
-folder_name = 'hasil'
+
 % Memeriksa apakah folder sudah ada
 if ~exist(folder_name, 'dir')
     % Jika folder belum ada, maka buat folder
@@ -206,21 +218,18 @@ else
     % disp(['Folder "', folder_name, '" sudah ada']);
 end
 
-%% Define a filename pattern for frames
-frame_filename ='frame_%04d.png';
-counter = 0;
-done = 0;
+
 %% plot the obtained solution
-create_movie = 0;  % do you want to create a movie?  Set to zero if not. 
+
 % Unfortunately, it is not (yet) possible to create a movie in Octave (this is not important for the exercise)
-% if create_movie
-%     movie_name = 'Week4_exercise_movie';  % file name
-%     vidfile = VideoWriter(movie_name,'MPEG-4');
-%     vidfile.FrameRate = 10;      % change this number to slow down or speed up the movie
-%     open(vidfile);
-%     fig = figure(2);
-%     set(fig,'color','w');
-% end
+if create_movie == 1 && software == 1
+    movie_name = 'Week4_exercise_movie_matlab';  % file name
+    vidfile = VideoWriter(fullfile(folder_name, movie_name),'MPEG-4');
+    vidfile.FrameRate = 10;      % change this number to slow down or speed up the movie
+    open(vidfile);
+    fig = figure(2);
+    set(fig,'color','w');
+end
 
 rho_max = max(max(rho)); % used to fix the color scale for all frames
 for kk = 1:NT
@@ -242,16 +251,20 @@ for kk = 1:NT
     hold off
     
     
-    if create_movie 
-        % frame = getframe(fig);
-        % writeVideo(vidfile, frame);
+    if create_movie == 1 && software == 0
          % Save each frame as a PNG image
         current_frame_filename = sprintf(frame_filename, kk);
         print(fullfile(folder_name, current_frame_filename), '-dpng', '-S800,600');
-        video_filename = fullfile(folder_name, 'output.mp4');
+        video_filename = fullfile(folder_name, 'Week4_exercise_movie_octave.mp4');
         system(['ffmpeg -y -framerate 10 -i ', fullfile(folder_name, frame_filename), ' -c:v libx264 -pix_fmt yuv420p ', video_filename]);   
         counter = counter + 1
     end
+
+    if create_movie == 1 && software == 1
+        frame = getframe(fig);
+        writeVideo(vidfile, frame);
+    end
+       
     % disp(counter)
     pause(0.1);
     % system(['del ',fullfile(folder_name, current_frame_filename)])
@@ -259,16 +272,14 @@ for kk = 1:NT
 end
 
 % disp(done)
-if done == 1 && create_movie == 1
+if create_movie == 1  && done == 1 && software == 0  
     for kk = 1:counter
         current_frame_filename = sprintf(frame_filename, kk);
         % disp("masuk")
         system(['del ',fullfile(folder_name, current_frame_filename)])
     end
 end
-if create_movie
-    % close(vidfile);
-    % Create the video using FFmpeg (Make sure FFmpeg is installed on your system)
-    % system(['del ',fullfile(folder_name, current_frame_filename)])
+if create_movie == 1 && software == 1
+    close(vidfile);
 end
 pause;
