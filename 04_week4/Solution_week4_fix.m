@@ -170,7 +170,7 @@ for ii = 1:Nx
     end
 end
 
-%% Time integration
+%% TODO : Time integration
 rho = zeros(nn, NT); % Solution matrix for the density of chlorine. 
                      % The columns of this matrix contain the solutions at different time instances
 rho(:,1) = rho0;     % The first column is thus equal to the initial condition
@@ -200,15 +200,16 @@ folder_name = 'hasil'
 if ~exist(folder_name, 'dir')
     % Jika folder belum ada, maka buat folder
     mkdir(folder_name);
-    disp(['Folder "', folder_name, '" berhasil dibuat.']);
+    % disp(['Folder "', folder_name, '" berhasil dibuat.']);
 else
     % Jika folder sudah ada, tampilkan pesan bahwa folder sudah ada
-    disp(['Folder "', folder_name, '" sudah ada']);
+    % disp(['Folder "', folder_name, '" sudah ada']);
 end
 
 %% Define a filename pattern for frames
 frame_filename ='frame_%04d.png';
-
+counter = 0;
+done = 0;
 %% plot the obtained solution
 create_movie = 0;  % do you want to create a movie?  Set to zero if not. 
 % Unfortunately, it is not (yet) possible to create a movie in Octave (this is not important for the exercise)
@@ -240,24 +241,34 @@ for kk = 1:NT
     axis equal
     hold off
     
-
-    if create_movie
+    
+    if create_movie 
         % frame = getframe(fig);
         % writeVideo(vidfile, frame);
          % Save each frame as a PNG image
         current_frame_filename = sprintf(frame_filename, kk);
         print(fullfile(folder_name, current_frame_filename), '-dpng', '-S800,600');
         video_filename = fullfile(folder_name, 'output.mp4');
-        system(['ffmpeg -y -framerate 10 -i ', fullfile(folder_name, frame_filename), ' -c:v libx264 -pix_fmt yuv420p ', video_filename]);
-        system(['del ',fullfile(folder_name, current_frame_filename)]);
+        system(['ffmpeg -y -framerate 10 -i ', fullfile(folder_name, frame_filename), ' -c:v libx264 -pix_fmt yuv420p ', video_filename]);   
+        counter = counter + 1
     end
-    
+    % disp(counter)
     pause(0.1);
+    % system(['del ',fullfile(folder_name, current_frame_filename)])
+    done = 1;
 end
 
-
+% disp(done)
+if done == 1 && create_movie == 1
+    for kk = 1:counter
+        current_frame_filename = sprintf(frame_filename, kk);
+        % disp("masuk")
+        system(['del ',fullfile(folder_name, current_frame_filename)])
+    end
+end
 if create_movie
     % close(vidfile);
     % Create the video using FFmpeg (Make sure FFmpeg is installed on your system)
+    % system(['del ',fullfile(folder_name, current_frame_filename)])
 end
-
+pause;
