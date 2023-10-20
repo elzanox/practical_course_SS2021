@@ -5,7 +5,7 @@ clc
 load('Week4_velocity_field')   % load the given velocity field. 
 % The provided file contains the grid vectors x and y and 
 % the x and y components of the velocity field vx and vy. 
-% The velocity fields are given as matrices which contain the values in the
+% The velocity fields are given as matrices which contain the valu  es in the
 % grid points. 
 
 %% plot the given velocity field
